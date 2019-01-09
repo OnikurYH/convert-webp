@@ -32,7 +32,7 @@ INPUT_DIR=$1
 
 mkdir -p $OUTPUT_DIR
 
-for filepath in "$INPUT_DIR"/*."$EXTENSION"; do
+for filepath in $INPUT_DIR/*.$EXTENSION; do
     filename=$(basename "${filepath%.*}")
     echo "Converting $filepath"
     cwebp -lossless "$filepath" -o "$OUTPUT_DIR/$filename.webp"
